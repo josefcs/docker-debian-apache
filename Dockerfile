@@ -21,8 +21,8 @@ RUN \
   a2enmod deflate && \
   a2enmod ssl && \
   apt-get autoremove -y && \
-  apt-get clean
-  # rm -rf /var/lib/apt/lists
+  apt-get clean \
+  && rm -rf /var/lib/apt/lists
 
 RUN echo Europe/Brussels > /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
 
